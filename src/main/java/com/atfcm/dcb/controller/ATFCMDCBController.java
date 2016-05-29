@@ -12,7 +12,7 @@ import com.atfcm.dcb.domain.Airport;
 import com.atfcm.dcb.service.repository.AirportRepository;
 
 @Controller
-public class HomeController {
+public class ATFCMDCBController {
 
 	@Autowired
 	AirportRepository airportRep ;
@@ -21,15 +21,24 @@ public class HomeController {
 	public String index(Model model){
 		Airport airport = airportRep.findOne(new Long(1));
 		model.addAttribute("airport", airport);
-		return "home";
+		return "index";
 	}
 	
-	@RequestMapping("/great")
+	@RequestMapping("/profile")
 	public Model great(Model model){
 		Airport gyd = airportRep.findByName("GYD");
 		List<Airport> airports = airportRep.findAll();
 		airports.add(gyd);
 		model.addAttribute("airports", airports);
+		return model;
+	}
+	
+	@RequestMapping("/hotspot")
+	public Model hello(Model model){
+		Airport gyd = airportRep.findByFlightNumber("J777");
+		//List<Airport> airports = airportRep.findAll();
+		//airports.add(gyd);
+		model.addAttribute("airport", gyd);
 		return model;
 	}
 	

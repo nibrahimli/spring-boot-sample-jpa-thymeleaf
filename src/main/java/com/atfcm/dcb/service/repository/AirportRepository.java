@@ -11,4 +11,6 @@ public interface AirportRepository extends Repository<Airport, Long> {
 	List<Airport> findAll();
 	Airport findByName(String name);
 	Airport findOne(Long id);
+	Airport findByFlightNumber(String flightNumber);
+	
 }	

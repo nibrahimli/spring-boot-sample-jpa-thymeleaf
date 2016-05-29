@@ -15,6 +15,9 @@ public class Airport {
 	@Column(nullable = false)
 	private String name;
 	
+	@Column(nullable = false)
+	private String flightNumber;
+	
 	/**
 	 * @return the id
 	 */
@@ -38,5 +41,17 @@ public class Airport {
 	 */
 	public void setName(String name) {
 		this.name = name;
+	}
+	/**
+	 * @return the flightNumber
+	 */
+	public String getFlightNumber() {
+		return flightNumber;
+	}
+	/**
+	 * @param flightNumber the flightNumber to set
+	 */
+	public void setFlightNumber(String flightNumber) {
+		this.flightNumber = flightNumber;
 	}
 }
